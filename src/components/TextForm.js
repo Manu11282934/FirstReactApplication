@@ -7,32 +7,32 @@ import React,{useState} from 'react'
 function TextForm(props) { 
     
 const change_text = (event)=>{
-    console.log(event.target.value)
     setText(event.target.value)
 }
 
 const Upper_text = ()=>{
-console.log("Upper_clicked")
 let Upper_text=Text.toUpperCase();
 setText(Upper_text);
+props.showAlert( "success","converted to Upper case");
 }
 
 const Lower_text = ()=>{
-    console.log("Lower_clicked")
     let Lower_text=Text.toLowerCase();
 setText(Lower_text);
+props.showAlert( "success","converted to Lower case");
     
 }
-const Clear_text = ()=>{
-    console.log("Clear_clicked")
+const Clear_text = ()=>{   
     let Clear_text="";
 setText(Clear_text);
+props.showAlert( "success","cleared the text");
     
 }
 const handleCopy = () => {
     var text = document.getElementById("MyBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert( "success","Copied to clip board");
 
 
 }

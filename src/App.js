@@ -9,7 +9,7 @@ import TextForm from './components/TextForm';
 function App() {
   const[Modeenabled,setModeEnabled]=useState('light');
   const [alert, setalert] = useState(null);
-
+//
   const showAlert=(type,message)=>
   {
     setalert(
@@ -43,7 +43,7 @@ function App() {
        <Navbar title="ManoHari" HomeText="Home" AboutText="About" mode={Modeenabled} toggelhandler={DarkMode_handler}></Navbar>
        <div className="container my-3">
          <Alert alert={alert}/>
-          <TextForm heading="enter text to analyze below" mode={Modeenabled}/>
+          <TextForm heading="enter text to analyze below" mode={Modeenabled} showAlert={showAlert}/>
           {/* <About/> */}
        </div>
       
